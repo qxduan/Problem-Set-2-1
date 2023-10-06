@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt</title>
+</head>
+<body>
+
+<h2>2-1-5</h2>
+
+<button onclick="askNumber()">Enter one numbers of your choice: </button>
+<p id="output">The times table will be displayed here.</p>
+
+
+<script>
+function askNumber() {
+    var number = parseInt(prompt("Please enter your number:"));
+    timesTable(number);
+}
+
+function timesTable(number) {
+    var outputString = "times table:<br>";
+    for (var i = 1; i <= 12; i++) {
+        var product = number * i;
+        outputString += number + " * " + i + " = " + product + "<br>";
+    }
+
+    document.getElementById("output").innerHTML = outputString;
+}
+
+
+</script>
+
+</body>
+</html>

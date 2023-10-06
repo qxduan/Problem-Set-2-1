@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt</title>
+</head>
+<body>
+
+<h2>2-1-4</h2>
+
+<button onclick="askNumbers()">Enter 2 numbers of your choice, set a range: </button>
+<p id="output">The sum will be displayed here.</p>
+<p id="output2">The odd numbers will be displayed here.</p>
+
+<script>
+function askNumbers() {
+    var firstNumber = parseInt(prompt("Please enter your First number:"));
+    var secNumber = parseInt(prompt("Please enter your Second number:"));
+    displayInOrder(firstNumber, secNumber);
+}
+
+function displayInOrder(start, end) {
+    if (start > end) {
+        var temp = start;
+        start = end;
+        end = temp;
+    }
+
+    var sum = 0;
+    var oddNumbers = [];
+
+    for (var i = start; i <= end; i++) {
+        sum += i;
+        if (i % 2 === 1) {
+            oddNumbers.push(i);
+        }
+    }
+
+    document.getElementById("output").innerHTML = "Sum: " + sum;
+    document.getElementById("output2").innerHTML = "Odd numbers: " + oddNumbers.join(', ');
+}
+</script>
+
+</body>
+</html>

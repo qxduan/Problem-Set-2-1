@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt</title>
+</head>
+<body>
+
+<h2>2-1-1</h2>
+<p id="output">Your number of offsprings will appear here</p>
+
+<button onclick="askName()">Enter Your Name</button>
+<button onclick="askOffspring()">How many children do you have?</button>
+
+<script>
+    var firstname = "";
+    var lastname = "";
+
+    function askName() {
+        firstname = prompt("Please enter your First name:");
+        lastname = prompt("Please enter your Last name:");
+        displayName();
+    }
+
+    function displayName(){
+        if (firstname && lastname) {
+           alert(firstname + " " + lastname);
+        }
+    }
+
+    function askOffspring(){
+        var answer = prompt("How many children do you have?");
+        if (answer == 0) {
+            document.getElementById("output").innerHTML = "You have no children.";
+        } else if (answer == 1) {
+            document.getElementById("output").innerHTML = "You have one child.";
+        } else if (answer > 1) {
+            document.getElementById("output").innerHTML = "You have " + answer + " children.";
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt</title>
+</head>
+<body>
+
+<h2>2-1-3</h2>
+
+<button onclick="askNumbers()">Enter 2 numbers of your choice: </button>
+<p id="output">The ordered numbers will be displayed here.</p>
+
+<script>
+function askNumbers() {
+        firstNumber = prompt("Please enter your First number:");
+        secNumber = prompt("Please enter your Second number:");
+        displayInOrder();
+    }
+function displayInOrder(){
+        if (firstNumber>secNumber) {
+            document.getElementById("output").innerHTML = 
+            secNumber+", "+firstNumber;
+        }
+        else if(secNumber>firstNumber){
+            document.getElementById("output").innerHTML = 
+            firstNumber+", "+secNumber;
+        }
+        else if(secNumber==firstNumber){
+            document.getElementById("output").innerHTML = 
+            firstNumber+", same for both"
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

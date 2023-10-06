@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prompt</title>
+</head>
+<body>
+
+<h2>2-1-6</h2>
+
+<button onclick="makeArray()">Enter numbers of your choice: </button>
+<p id="output">The result will be displayed here.</p>
+
+<script>
+function count(array, val){
+    var count=0;
+    for(var i=0; i<array.length; i++){  
+      if (array[i]<val){
+            count+=1;
+      }
+    }
+    document.getElementById("output").innerHTML = "From your created list, there are " +count+" numbers smaller than " + val ;
+    return count;
+}
+
+function makeArray(){
+    var input = prompt("Please enter your numbers in a list, separated by comma and space:");  // Removed parseInt
+    var array = input.split(", ").map(function(item) {
+        return parseInt(item, 10);  // radix for parsing integers
+    });
+
+    var element_select = parseInt(prompt("Please select your number: "), 10);
+    var val = element_select;
+    count(array, val);
+}
+
+</script>
+
+</body>
+</html>
